@@ -1,203 +1,640 @@
-# Vyaptiq IQ — Data Driven Retail Intelligence For Revenue Growth
+# Vyaptiq IQ
+### Data-Driven Retail Intelligence for Revenue & Profitability Growth
 
-[![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.2.2-blue.svg)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-5.1.4-purple.svg)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4.1-38B2AC.svg)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+  <strong>Transforming Retail Transactions into Actionable Business Intelligence</strong>
+</p>
 
-> **B.Tech Major Project Review Application (Academic Year 2026–2027)**  
-> **Department of Information Technology, NRI Institute of Technology (Autonomous)**  
-> Affiliated with **Jawaharlal Nehru Technological University Kakinada (JNTUK)**.  
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/TypeScript-5.2.2-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-5.1.4-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4.1-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+</p>
 
----
-
-## 👨‍💻 Project Developer & Attribution
-
-- **Developer:** **Hari Sai Yugesh** ([@yugesh23](https://github.com/yugesh23))  
-- **PIN:** `23KN1A1239`  
-- **Role:** Sole Full-Stack Developer, Retail Systems Analyst & UI/UX Architect  
-- **Project Guide:** **Mr. Ch. Kiran Babu**, Assistant Professor, Department of IT, NRIIT  
-- **Head of Department:** **Dr. J. Rajendra Prasad**, Professor & HOD, Department of IT, NRIIT  
+<p align="center">
+  <img src="https://img.shields.io/badge/Domain-Business%20Intelligence-purple?style=flat-square" />
+  <img src="https://img.shields.io/badge/Analytics-Retail%20Intelligence-success?style=flat-square" />
+  <img src="https://img.shields.io/badge/Project-2026--2027-blue?style=flat-square" />
+</p>
 
 ---
 
-## 💡 Executive Summary
+## 1. Project Overview
 
-Retailers frequently expand gross sales volume while suffering **gross margin degradation**. Disconnected spreadsheets make it difficult to link changes in margin to specific pricing tiers, promotional discounts, SKU mixes, or advertising investments.
+**Vyaptiq IQ** is an interactive Retail Business Intelligence and Decision Support Platform developed to help businesses understand sales performance, monitor profitability, identify unusual transactions, evaluate marketing effectiveness, and make data-driven decisions.
 
-**Vyaptiq IQ** connects transaction validation, weighted gross margin tracking, population standard deviation $Z$-score anomaly detection, inspectable rule-based recommendations, and managerial decision governance into a single projector-ready web application.
+Traditional sales reporting often focuses heavily on revenue while overlooking important business factors such as gross margin, promotional discounts, product profitability, and marketing expenditure.
+
+Vyaptiq IQ addresses this problem by combining business analytics, statistical analysis, data visualization, and decision management into a unified platform.
+
+The application converts raw retail transaction data into meaningful business insights through automated KPI calculations, anomaly detection, explainable recommendations, and interactive scenario analysis.
+
+### The Core Objective
+
+Move beyond simply understanding how much a business sells and understand how much it actually earns, where profitability is being lost, and what actions management should take.
 
 ---
 
-## 🏗️ System Architecture & Data Flow
+## 2. Problem Statement
+
+Retail businesses frequently encounter challenges such as:
+
+- High revenue without proportionate profitability.
+- Excessive promotional discounts reducing gross margins.
+- Difficulty identifying unusual or high-value transactions.
+- Inefficient marketing expenditure.
+- Limited understanding of product-level performance.
+- Disconnected spreadsheets and manual reporting.
+- Lack of structured processes for reviewing and approving business recommendations.
+
+Vyaptiq IQ provides an integrated analytics environment to address these challenges.
+
+---
+
+## 3. Key Features
+
+### Business Intelligence Dashboard
+- Interactive executive dashboard.
+- Total revenue and gross margin tracking.
+- Gross margin percentage monitoring.
+- Total units sold analysis.
+- Business KPI visualization.
+
+### Data Ingestion & Validation
+- CSV transaction data upload.
+- Automatic column alias mapping.
+- Data quality validation.
+- Missing and invalid value handling.
+- Revenue and quantity consistency checks.
+
+### Retail Performance Analytics
+- Product and SKU-level analysis.
+- Revenue and profitability evaluation.
+- Promotional discount analysis.
+- Marketing performance evaluation.
+- Customer-level revenue metrics.
+
+### Statistical Anomaly Detection
+- Population mean and standard deviation calculations.
+- Z-score-based outlier identification.
+- Transaction-level anomaly visualization.
+- Investigation-focused statistical insights.
+
+### Recommendation Engine
+- Rule-based business recommendations.
+- Marketing efficiency evaluation.
+- Price elasticity analysis.
+- Promotional threshold monitoring.
+- Evidence-based recommendation explanations.
+
+### Scenario Simulator
+- Interactive four-week business scenario simulation.
+- Adjustable business assumptions.
+- Projected gross-margin analysis.
+- Comparison of potential business outcomes.
+
+### Decision Management
+- Analyst and Decision Maker role separation.
+- Recommendation review and approval.
+- Action status management.
+- Persistent decision audit trail.
+
+### Executive Reporting
+- Executive reporting dashboard.
+- Printable management reports.
+- PDF export through browser printing.
+- Business performance summaries.
+
+---
+
+## 4. System Architecture
+
+The application is divided into five major functional modules that work together to transform raw retail data into actionable business intelligence.
 
 ```mermaid
-graph TD
-    A[Raw Retail Transaction CSV] --> B[Data Workspace & Header Alias Mapping]
-    B --> C[Validation & Revenue Discrepancy Resolution]
-    C --> D[Weighted KPI & Margin Computation Engine]
-    C --> E[Population Z-Score Anomaly Engine ddof=0]
-    D & E --> F[Inspectable Recommendation Rule Engine]
-    F --> G[REC-01: Marketing ROI Reallocation]
-    F --> H[REC-02: Inelastic Price Adjustment]
-    F --> I[REC-03: Discount Frequency Tightening]
-    G & H & I --> J[Interactive 4-Week Scenario Simulator]
-    J --> K[Decision Governance State Machine]
-    K --> L[Print-Ready Executive Briefing & PDF]
+flowchart TD
+    A(["Retail Transaction Data<br/>CSV Upload"]):::source
+
+    B["Data Ingestion & Validation<br/>CSV Parsing · Column Mapping"]:::processing
+
+    C["Data Processing Engine<br/>Cleaning · Calculations · Validation"]:::processing
+
+    D["Business Analytics Engine<br/>KPIs · Statistical Analysis"]:::analytics
+
+    E["Interactive Dashboard<br/>Revenue · Margin · Sales"]:::dashboard
+
+    F["Anomaly Detection<br/>Z-Score Analysis"]:::warning
+
+    G["Recommendation Engine<br/>Business Rules · Insights"]:::recommendation
+
+    H["Decision Management<br/>Review · Approve · Reject"]:::management
+
+    I[("Audit Trail<br/>Decision History")]:::storage
+
+    J(["Executive Reports<br/>PDF · Print"]):::report
+
+    A --> B
+    B --> C
+    C --> D
+
+    D --> E
+    D --> F
+    D --> G
+
+    G --> H
+    H --> I
+    E --> J
+    H --> J
+
+    classDef source fill:#172554,stroke:#3B82F6,color:#DBEAFE,stroke-width:2px
+    classDef processing fill:#164E63,stroke:#06B6D4,color:#CFFAFE,stroke-width:2px
+    classDef analytics fill:#312E81,stroke:#818CF8,color:#E0E7FF,stroke-width:2px
+    classDef dashboard fill:#14532D,stroke:#22C55E,color:#DCFCE7,stroke-width:2px
+    classDef warning fill:#78350F,stroke:#F59E0B,color:#FEF3C7,stroke-width:2px
+    classDef recommendation fill:#581C87,stroke:#C084FC,color:#F3E8FF,stroke-width:2px
+    classDef management fill:#134E4A,stroke:#2DD4BF,color:#CCFBF1,stroke-width:2px
+    classDef storage fill:#374151,stroke:#9CA3AF,color:#F3F4F6,stroke-width:2px
+    classDef report fill:#831843,stroke:#F472B6,color:#FCE7F3,stroke-width:2px
 ```
 
-### The 5 Core System Modules
+### Five Core Modules
 
-| Module | Purpose | Implementation Highlights |
+| Module | Responsibility |
+|---|---|
+| Authentication & Roles | Analyst, Decision Maker, and Admin permissions |
+| Data Workspace | CSV ingestion, column mapping, and validation |
+| Analytics Engine | KPI calculations, statistical analysis, and elasticity |
+| Decision Governance | Recommendation review, approval, and auditing |
+| Reporting & Visualization | Interactive dashboards and executive reports |
+
+---
+
+## 5. Data Analytics Workflow
+
+The following workflow illustrates how the platform processes retail transaction data.
+
+```mermaid
+flowchart TD
+    A(["Upload Retail Dataset"]):::blue
+    B["Data Quality Checks"]:::cyan
+    C{"Data Valid?"}:::decision
+    D["Resolve Missing or Invalid Values"]:::orange
+    E["Calculate Business KPIs"]:::purple
+    F["Revenue & Gross Margin Analysis"]:::green
+    G["Statistical Anomaly Detection"]:::red
+    H["Marketing & Price Elasticity Analysis"]:::purple
+    I["Generate Business Recommendations"]:::pink
+    J(["Interactive Dashboard & Reports"]):::success
+
+    A --> B
+    B --> C
+    C -->|No| D
+    D --> B
+    C -->|Yes| E
+    E --> F
+    E --> G
+    E --> H
+    F --> I
+    G --> I
+    H --> I
+    I --> J
+
+    classDef blue fill:#1E3A8A,stroke:#60A5FA,color:#DBEAFE,stroke-width:2px
+    classDef cyan fill:#164E63,stroke:#22D3EE,color:#CFFAFE,stroke-width:2px
+    classDef decision fill:#713F12,stroke:#FACC15,color:#FEF9C3,stroke-width:2px
+    classDef orange fill:#7C2D12,stroke:#FB923C,color:#FFEDD5,stroke-width:2px
+    classDef purple fill:#4C1D95,stroke:#A78BFA,color:#EDE9FE,stroke-width:2px
+    classDef green fill:#14532D,stroke:#4ADE80,color:#DCFCE7,stroke-width:2px
+    classDef red fill:#7F1D1D,stroke:#F87171,color:#FEE2E2,stroke-width:2px
+    classDef pink fill:#831843,stroke:#F472B6,color:#FCE7F3,stroke-width:2px
+    classDef success fill:#064E3B,stroke:#34D399,color:#D1FAE5,stroke-width:3px
+```
+
+---
+
+## 6. Business Analytics Concepts & Calculations
+
+Vyaptiq IQ incorporates several important concepts from Business Analytics, Retail Analytics, and Statistics.
+
+### 6.1 Revenue
+
+Revenue represents the total amount of money generated through product sales.
+
+**Formula:**
+
+Revenue = Selling Price × Quantity Sold
+
+### 6.2 Gross Margin
+
+Gross margin represents the amount remaining after subtracting the cost of goods sold from revenue.
+
+**Formula:**
+
+Gross Margin = Revenue − Cost of Goods Sold
+
+### 6.3 Gross Margin Percentage
+
+Measures the percentage of revenue retained after accounting for the cost of goods sold.
+
+**Formula:**
+
+Gross Margin % = (Gross Margin / Revenue) × 100
+
+### 6.4 SKU (Stock Keeping Unit)
+
+A SKU is a unique identifier assigned to a product or product variant to help businesses track inventory, sales, and product performance.
+
+Example: A particular T-shirt design in a specific size and color can have its own SKU.
+
+### 6.5 ARPU (Average Revenue Per User)
+
+ARPU measures the average revenue generated per customer or user during a specified period.
+
+**Formula:**
+
+ARPU = Total Revenue / Number of Unique Customers
+
+### 6.6 Standard Deviation
+
+Standard deviation measures how much individual observations vary from the average value.
+
+A higher standard deviation indicates greater variation in the dataset.
+
+### 6.7 Z-Score
+
+A Z-score measures how far a particular observation is from the mean in terms of standard deviations.
+
+**Formula:**
+
+Z = (X − μ) / σ
+
+Where:
+
+- X = Observed transaction value.
+- μ = Population mean.
+- σ = Population standard deviation.
+
+The application uses population standard deviation (ddof = 0) for the referenced outlier calculation.
+
+### 6.8 Anomaly Detection
+
+An anomaly is an observation that significantly differs from the expected pattern in a dataset.
+
+In Vyaptiq IQ, Z-scores help identify unusually high-value transactions that may require further investigation.
+
+### 6.9 Price Elasticity of Demand
+
+Price elasticity measures how sensitive customer demand is to changes in product prices.
+
+**Formula:**
+
+Price Elasticity = % Change in Quantity Demanded / % Change in Price
+
+Interpretation:
+
+- |Elasticity| > 1: Relatively elastic demand.
+- |Elasticity| < 1: Relatively inelastic demand.
+- |Elasticity| = 1: Unitary elasticity.
+
+### 6.10 Marketing Return
+
+Marketing return evaluates the revenue attributed to marketing relative to the amount spent.
+
+**Formula:**
+
+Marketing Return = Attributed Revenue / Marketing Spend
+
+A higher value indicates more attributed revenue per unit of marketing expenditure. It should not be confused with profit-based ROI.
+
+---
+
+## 7. Statistical Anomaly Detection — Real Dataset Example
+
+One of the important analytical capabilities of Vyaptiq IQ is identifying unusual transactions using statistical analysis.
+
+### Outlier Spotlight: Transaction Row 888
+
+The platform identifies an unusually high-value Jacket transaction.
+
+| Parameter | Result |
+|---|---:|
+| Transaction Row | 888 |
+| Product | Jacket |
+| Quantity | 50 Units |
+| Selling Price | ₹2,142 |
+| Transaction Revenue | ₹107,100 |
+| Population Mean | ₹27,968.09 |
+| Z-Score | +3.94 |
+
+**Calculation:**
+
+50 × ₹2,142 = ₹107,100
+
+The transaction has a Z-score of +3.94, indicating that its value is approximately 3.94 population standard deviations above the mean.
+
+This represents a statistical investigation signal. It does not automatically indicate fraud, incorrect data, or a business error.
+
+Further investigation is necessary to establish the actual cause.
+
+---
+
+## 8. Recommendation Engine
+
+Vyaptiq IQ uses an explainable, rule-based recommendation engine to identify business opportunities and potential profitability issues.
+
+The recommendations are supported by measurable business indicators.
+
+### Recommendation Examples
+
+| ID | Product | Business Insight |
 |---|---|---|
-| **M1: Authentication & Roles** | Role-based governance | Dual roles: *Business Analyst* (exploratory insights) and *Decision Maker* (approval sign-off). |
-| **M2: Ingestion & Workspace** | Spreadsheet parsing | Auto-resolves aliases (`qty` → `units`, `product_id` → `sku`), detects bad types, and prompts for price discrepancies. |
-| **M3: Processing Engine** | Analytics & anomalies | Computes weighted gross margin (`sum(margin) / sum(revenue) * 100`) and population $Z$-scores (`ddof=0`). |
-| **M4: Decision Governance** | Operational lifecycle | Idempotent state machine (`Pending` → `Reviewed` → `Approved` → `Action in Progress` → `Completed`). |
-| **M5: Reports & Visualization** | Executive delivery | Projector-optimized dashboard (1366×768) and clean `@media print` executive sheet with A/B test plans. |
+| REC-01 | Denim | Marketing return of ₹25.85 per ₹1 spent compared with an ₹8.32 baseline |
+| REC-02 | Jacket | Price elasticity of -0.28 and gross margin of 16.10% |
+| REC-03 | T-Shirt | Promotional rate of 38%, exceeding the 25% threshold, with margin below 20% |
+
+### Understanding the Recommendations
+
+**REC-01 — Denim**
+
+The marketing return is significantly higher than the baseline, indicating a potential opportunity to investigate and expand marketing investment.
+
+**REC-02 — Jacket**
+
+Demand is relatively inelastic, but the gross margin is below the 20% threshold. Pricing and cost structures should be reviewed.
+
+**REC-03 — T-Shirt**
+
+The promotional rate exceeds the defined 25% ceiling while gross margin remains below 20%. Promotional strategies should be reviewed.
+
+These recommendations are decision-support signals rather than guaranteed business outcomes.
 
 ---
 
-## ⏱️ 3-Minute Projector Presentation Guide
+## 9. Decision Management & Governance
+
+A major feature of Vyaptiq IQ is its structured recommendation approval process.
+
+Instead of generating recommendations without accountability, the platform allows authorized decision makers to review and record business actions.
+
+### Decision Lifecycle
 
 ```mermaid
-flowchart LR
-    subgraph Min1["Minute 1: Overview & Spotlight"]
-        direction TB
-        A1[Open Populated Overview]
-        A2[Highlight ₹50.34M Rev & 22.94% Margin]
-        A3[Spotlight Row 888 at +3.94σ on Dot Plot]
-        A1 --> A2 --> A3
-    end
+flowchart TD
+    A(["Recommendation Generated"]):::start
+    B["Pending"]:::pending
+    C["Reviewed by Decision Maker"]:::review
+    D{"Management Decision"}:::decision
+    E["Approved"]:::approved
+    F["Rejected"]:::rejected
+    G["Needs Analysis"]:::analysis
+    H["Action in Progress"]:::progress
+    I(["Completed"]):::completed
+    J[("Persistent Audit Trail")]:::storage
 
-    subgraph Min2["Minute 2: Rules & Simulator"]
-        direction TB
-        B1[Inspect REC-01 Denim ROI ₹25.85 vs ₹8.32]
-        B2[Inspect REC-02 Jacket Elasticity e=-0.28]
-        B3[Simulate 4-Week Margin Expansion]
-        B1 --> B2 --> B3
-    end
+    A --> B --> C --> D
 
-    subgraph Min3["Minute 3: Governance & Print"]
-        direction TB
-        C1[Switch Role to Decision Maker]
-        C2[Approve Action & Record Remarks]
-        C3[Verify Audit Trail & Print Executive Sheet]
-        C1 --> C2 --> C3
-    end
+    D -->|Approve| E
+    D -->|Reject| F
+    D -->|Further Review| G
 
-    Min1 --> Min2 --> Min3
+    E --> H --> I
+
+    B -.-> J
+    C -.-> J
+    E -.-> J
+    F -.-> J
+    G -.-> J
+    H -.-> J
+    I -.-> J
+
+    classDef start fill:#172554,stroke:#60A5FA,color:#DBEAFE,stroke-width:2px
+    classDef pending fill:#78350F,stroke:#FBBF24,color:#FEF3C7,stroke-width:2px
+    classDef review fill:#164E63,stroke:#22D3EE,color:#CFFAFE,stroke-width:2px
+    classDef decision fill:#4C1D95,stroke:#A78BFA,color:#EDE9FE,stroke-width:2px
+    classDef approved fill:#14532D,stroke:#4ADE80,color:#DCFCE7,stroke-width:2px
+    classDef rejected fill:#7F1D1D,stroke:#F87171,color:#FEE2E2,stroke-width:2px
+    classDef analysis fill:#713F12,stroke:#FACC15,color:#FEF9C3,stroke-width:2px
+    classDef progress fill:#134E4A,stroke:#2DD4BF,color:#CCFBF1,stroke-width:2px
+    classDef completed fill:#064E3B,stroke:#34D399,color:#D1FAE5,stroke-width:3px
+    classDef storage fill:#374151,stroke:#9CA3AF,color:#F3F4F6,stroke-width:2px
 ```
 
-1. **Minute 1: Baseline KPIs & The Outlier Spotlight**
-   - Open on the populated Overview. Highlight the 4 headline cards: **₹50,342,560.58 Revenue**, **₹11,548,330.58 Gross Margin**, **22.94% Margin**, and **42,563 Units**.
-   - Point to **Row 888** in the outlier dot plot: 50 units @ ₹2,142 = ₹107,100 (Jacket sale).
-   - Explain that $+3.94\sigma$ is a statistical investigation signal for bulk institutional buying or discount leakage.
+### Available Decision Statuses
 
-2. **Minute 2: Inspect Business Evidence Behind Recommendations**
-   - Navigate to **Recommendations**:
-     - **REC-01 (Denim):** Marketing return is ₹25.85 per ₹1 spent vs ₹8.32 baseline (+210% delta).
-     - **REC-02 (Jacket):** Inelastic demand ($|e| = -0.28 < 0.5$) with 16.10% margin (< 20%); test 4% price increase.
-     - **REC-03 (T-Shirt):** 38.0% promo rate exceeds 25% ceiling with low margin (< 20%); test promo tightening.
-   - Adjust the **4-Week Scenario Simulator** to preview projected gross-margin expansion.
+- Pending
+- Reviewed
+- Approved
+- Action in Progress
+- Completed
+- Rejected
+- Needs Analysis
 
-3. **Minute 3: Role Switch, Decision Recording & Executive Briefing**
-   - In the top bar, switch Demo Role to **Decision Maker**.
-   - Click **Approve Action** on REC-01 and record a management remark: *"Approved for 4-week regional pilot test."*
-   - Navigate to **Decisions** to verify the permanent audit trail.
-   - Navigate to **Reports** and click **Print / Save PDF** to generate the executive sheet.
+The audit trail provides a record of managerial decisions and recommendation status changes.
 
 ---
 
-## 🔄 Decision Governance State Machine
+## 10. Scenario Simulator
 
-```mermaid
-stateDiagram-v2
-    [*] --> Pending: Rule Triggered by Engine
-    Pending --> Reviewed: Analyst Verifies Evidence
-    Pending --> Needs_Analysis: Further Query Requested
-    Needs_Analysis --> Reviewed: Data Re-inspected
-    Reviewed --> Approved: Decision Maker Authorization
-    Reviewed --> Rejected: Decision Maker Rejection
-    Approved --> Action_in_Progress: 4-Week Regional Pilot Live
-    Action_in_Progress --> Completed: Operational Rollout Finished
-    Completed --> [*]
-```
+The four-week Scenario Simulator helps users explore potential business improvements through adjustable assumptions.
 
----
+It allows decision makers to examine how different business scenarios could affect projected gross margins.
 
-## 🛠️ Technology Stack
+The simulator supports:
 
-- **Frontend Core:** React 18, TypeScript, Tailwind CSS, Lucide Icons
-- **Bundler & Dev Server:** Vite 5
-- **Dual Persistence Architecture:**
-  - **Local Review Mode (Default):** Browser `localStorage` adapter for instant zero-dependency execution.
-  - **Connected Mode:** Supabase PostgreSQL backend with Row-Level Security (RLS) policies (`supabase/migrations/20261123_init.sql`).
-- **Automated Verification:** Standalone Node.js test script (`verify_suite.js`) and in-app audit runner.
+- Business assumption adjustments.
+- Four-week scenario evaluation.
+- Projected gross-margin analysis.
+- Comparison of potential outcomes.
+
+The results are scenario-based projections, not guaranteed financial performance.
 
 ---
 
-## 🚀 Quick Start (Local Development)
+## 11. Technology Stack
 
-```bash
-# 1. Clone repository
-git clone https://github.com/yugesh23/vyaptiq-iq.git
-cd vyaptiq-iq
+| Technology | Purpose |
+|---|---|
+| React 18 | Frontend application development |
+| TypeScript | Type-safe application development |
+| Vite | Development server and build tooling |
+| Tailwind CSS | Responsive interface styling |
+| Lucide Icons | Interface iconography |
+| Supabase | Optional PostgreSQL backend |
+| PostgreSQL | Relational database |
+| Node.js | Verification scripts |
+| Browser localStorage | Local persistence |
 
-# 2. Install dependencies
-npm install
+### Data Persistence Architecture
 
-# 3. Start development server
-npm run dev
-```
+Vyaptiq IQ supports two persistence modes.
 
-Open **`http://localhost:5173`** in your browser.
+**Local Review Mode**
+
+- Uses browser localStorage.
+- Supports local demonstrations and review sessions.
+- Works without a connected database.
+
+**Supabase Connected Mode**
+
+- Uses PostgreSQL as the backend database.
+- Includes database migration scripts.
+- Supports Row-Level Security (RLS) policies.
 
 ---
 
-## 🧪 Specification Verification Suite
+## 12. Project Performance & Dataset Results
 
-Run the automated test suite directly from the command line:
+The application includes a retail transaction dataset used to demonstrate business analytics calculations and dashboard functionality.
+
+### Dataset KPI Results
+
+| Business Metric | Value |
+|---|---:|
+| Total Revenue | ₹50,342,560.58 |
+| Gross Margin | ₹11,548,330.58 |
+| Gross Margin Percentage | 22.94% |
+| Total Units Sold | 42,563 |
+| Identified Outlier | Row 888 |
+| Outlier Z-Score | +3.94 |
+
+### Verification Suite
+
+The project includes an automated verification script to validate mathematical calculations and important application requirements.
+
+Run the verification:
 
 ```bash
 node verify_suite.js
 ```
 
-### Verified Audit Results
+### Verification Coverage
 
-| Test Check | Specification Requirement | Engine Outcome | Status |
-|---|---|---|:---:|
-| **Arithmetic Benchmark** | 2 units @ ₹100 (cost ₹60) + 1 unit @ ₹200 (cost ₹150) | Units: 3, Rev: ₹400, GM: ₹130, GM%: 32.5%, Promo: 50%, ARPU: ₹200 | **PASS** |
-| **Outlier Row 888** | 50 units @ ₹2,142 = ₹107,100 | Rev: ₹107,100.00, Population Z: +3.94σ | **PASS** |
-| **Roundtrip Test** | Ingest → Download CSV → Re-upload | Identical revenue (₹50,342,560.58) and units (42,563) | **PASS** |
-| **Zero Variance** | Transactions with identical revenue | Graceful detection; divide-by-zero prevented | **PASS** |
-| **Missing Cost** | Omitted cost column | Silently assuming zero cost prevented; flagged | **PASS** |
-| **Missing Customer ID** | Omitted customer identifier | ARPU reported as null with clear explanatory denominator | **PASS** |
-| **Rule Boundaries** | Exactly 20.0% margin, 25.0% promo, 20.0% delta | Evaluated against strict inequality rules | **PASS** |
-| **Role Authority** | Separation of duties | Analyst restricted from Approvals; Decision Maker authorized | **PASS** |
+- Arithmetic benchmark calculations.
+- Dataset KPI reproduction.
+- Outlier identification.
+- CSV download and re-upload consistency.
+- Zero-variance dataset handling.
+- Missing cost disclosure.
+- Missing customer ID handling.
+- Analyst and Decision Maker permission separation.
 
 ---
 
-## 🔗 Supabase Connected Backend Setup (Optional)
+## 13. Getting Started
 
-1. Create a project on [supabase.com](https://supabase.com).
-2. Execute [`supabase/migrations/20261123_init.sql`](supabase/migrations/20261123_init.sql) in the Supabase SQL Editor.
-3. Copy `.env.example` to `.env` and set your credentials:
-   ```env
-   VITE_SUPABASE_URL=https://your-project-id.supabase.co
-   VITE_SUPABASE_ANON_KEY=your-anon-key
-   ```
+Follow these instructions to run Vyaptiq IQ locally.
+
+### Prerequisites
+
+Make sure the following are installed:
+
+- Node.js v18 or higher.
+- npm.
+- Git.
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/vyaptiq-iq.git
+```
+
+### Step 2: Navigate to the Project
+
+```bash
+cd vyaptiq-iq
+```
+
+### Step 3: Install Dependencies
+
+```bash
+npm install
+```
+
+### Step 4: Start the Development Server
+
+```bash
+npm run dev
+```
+
+### Step 5: Open the Application
+
+Visit:
+
+```text
+http://localhost:5173
+```
+
+The application should now be available in your browser.
 
 ---
 
-## 📜 Academic Boundaries & Future Work
+## 14. Optional Supabase Backend Setup
 
-- **Scope:** Evaluated on historical retail transaction fixtures. No commercial deployment or external A/B test is claimed.
-- **Future Scope:** Machine learning demand forecasting (ARIMA/Prophet), streaming POS/ERP data ingestion, and automated SHAP explainability.
+To configure the connected PostgreSQL backend:
+
+1. Create a project in Supabase.
+2. Open the SQL Editor.
+3. Execute the migration script:
+
+```text
+supabase/migrations/20261123_init.sql
+```
+
+4. Copy `.env.example` to `.env`.
+5. Configure the required environment variables:
+
+```env
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+**Important:** Never commit private credentials, service-role keys, or other secrets to a public GitHub repository.
 
 ---
 
-## 📄 License
+## 15. Future Enhancements
 
-Developed for academic review purposes by **Hari Sai Yugesh** at NRI Institute of Technology (Autonomous), affiliated with JNTU Kakinada. Released under the [MIT License](LICENSE).
+Potential future improvements include:
+
+- Machine learning-based demand forecasting.
+- Advanced customer segmentation.
+- Real-time POS and ERP integration.
+- Explainable AI-based recommendation analysis.
+- Predictive inventory optimization.
+- Automated business performance alerts.
+- Advanced sales trend analysis.
+
+---
+
+## 16. Project Information
+
+| Detail | Information |
+|---|---|
+| Project Name | Vyaptiq IQ |
+| Project Category | Retail Business Intelligence |
+| Domain | Data Analytics & Business Intelligence |
+| Developer | Hari Sai Yugesh |
+| Department | Information Technology |
+| Institution | NRI Institute of Technology (Autonomous) |
+| Academic Year | 2026–2027 |
+
+**Project Guide:** Mr. Ch. Kiran Babu, Assistant Professor
+
+---
+
+## 17. License
+
+This project is developed for educational and academic purposes as part of the B.Tech curriculum at NRI Institute of Technology (Autonomous), affiliated with JNTU Kakinada.
+
+Released under the [MIT License](LICENSE).
+
+---
+
+<p align="center">
+  <strong>Vyaptiq IQ</strong>
+  <br/>
+  Turning Retail Data into Better Business Decisions.
+  <br/><br/>
+  Developed by <strong>Hari Sai Yugesh</strong>
+</p>
